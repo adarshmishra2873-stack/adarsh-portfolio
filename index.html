@@ -197,21 +197,36 @@
   }
 </script>
     <div id="auto-portfolio" style="display:flex; flex-wrap:wrap; gap:15px; justify-content:center; padding:20px; background:#0f0f11;"></div>
-<script>
+    <script>
   fetch('projects.json')
     .then(res => res.json())
     .then(data => {
       if (data.items) {
-        let html = '<h2 style="width:100%; text-align:center; color:#f39c12; margin-bottom:20px;">LATEST PROJECTS</h2>';
+        let html = '<h2 style="width:100%; text-align:center; color:#f39c12; margin:40px 0 20px;">LATEST WORK & UPDATES</h2>';
         data.items.forEach(p => {
-          html += `<div style="max-width:300px; text-align:center;">
-                     <img src="${p.image}" style="width:100%; border-radius:10px; border:2px solid #333;" alt="${p.title}">
-                     <h4 style="color:#fff; margin-top:10px;">${p.title}</h4>
-                   </div>`;
+          html += `<div style="max-width:350px; text-align:center; margin:15px; background:#1a1a1c; padding:20px; border-radius:15px; border:1px solid #333; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">`;
+          
+          // YouTube Link Check
+          if(p.yt_link) {
+            let ytId = p.yt_link.split('v=')[1] || p.yt_link.split('/').pop();
+            html += `<iframe width="100%" height="200" src="https://www.youtube.com/embed/${ytId}" frameborder="0" allowfullscreen style="border-radius:10px;"></iframe>`;
+          } 
+          // Video File Check
+          else if(p.image && (p.image.includes('.mp4') || p.image.includes('.webm'))) {
+            html += `<video src="${p.image}" controls style="width:100%; border-radius:10px;"></video>`;
+          } 
+          // Image Check
+          else if(p.image) {
+            html += `<img src="${p.image}" style="width:100%; border-radius:10px;" alt="${p.title}">`;
+          }
+
+          html += `<h4 style="color:#fff; margin-top:15px; font-size:18px;">${p.title}</h4>
+                   <p style="color:#ccc; font-size:14px; line-height:1.5;">${p.desc}</p>
+                 </div>`;
         });
         document.getElementById('auto-portfolio').innerHTML = html;
       }
-    }).catch(err => console.log('Waiting for new projects...'));
+    }).catch(err => console.log('Waiting for content...'));
 </script>
 
 </body>
