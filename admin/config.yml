@@ -6,12 +6,16 @@ media_folder: "images"
 public_folder: "images"
 
 collections:
-  - name: "portfolio"
-    label: "Projects"
-    folder: "projects"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Feature Image", name: "image", widget: "image"}
-      - {label: "Description", name: "body", widget: "markdown"}
-
+  - name: "portfolio_settings"
+    label: "My Portfolio"
+    files:
+      - label: "Auto Gallery"
+        name: "gallery"
+        file: "projects.json"
+        fields:
+          - label: "Upload Photos Here"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Photo Title", name: "title", widget: "string"}
+              - {label: "Select Image", name: "image", widget: "image"}
