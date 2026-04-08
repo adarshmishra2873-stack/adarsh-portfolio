@@ -196,5 +196,23 @@
     });
   }
 </script>
+    <div id="auto-portfolio" style="display:flex; flex-wrap:wrap; gap:15px; justify-content:center; padding:20px; background:#0f0f11;"></div>
+<script>
+  fetch('projects.json')
+    .then(res => res.json())
+    .then(data => {
+      if (data.items) {
+        let html = '<h2 style="width:100%; text-align:center; color:#f39c12; margin-bottom:20px;">LATEST PROJECTS</h2>';
+        data.items.forEach(p => {
+          html += `<div style="max-width:300px; text-align:center;">
+                     <img src="${p.image}" style="width:100%; border-radius:10px; border:2px solid #333;" alt="${p.title}">
+                     <h4 style="color:#fff; margin-top:10px;">${p.title}</h4>
+                   </div>`;
+        });
+        document.getElementById('auto-portfolio').innerHTML = html;
+      }
+    }).catch(err => console.log('Waiting for new projects...'));
+</script>
+
 </body>
 </html>
