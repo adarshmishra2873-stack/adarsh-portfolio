@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="qY2IgXtWz_ZqnAP5wQHSNurkD1Hv0lcv3-5dGCFq9tY" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adarsh Mishra | YouTube Growth Expert</title>
+    <style>
+        /* Modern Dark Theme CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        body { background-color: #0f0f11; color: #ffffff; line-height: 1.6; overflow-x: hidden; }
+        
+        .highlight { color: #f39c12; } 
+        
+        /* Navigation */
+        nav { padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; background-color: rgba(15, 15, 17, 0.95); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
+        nav h1 { font-size: 24px; font-weight: 800; letter-spacing: 1px; }
+        nav .nav-links { display: flex; gap: 20px; }
+        nav a { color: #fff; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        nav a:hover { color: #f39c12; }
+
+        /* Hero Section */
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 100px 20px; background: radial-gradient(circle at center, #1a1a1d 0%, #0f0f11 100%); }
+        .hero .profile-photo { width: 180px; height: 180px; border-radius: 50%; border: 4px solid #f39c12; object-fit: cover; margin-bottom: 25px; box-shadow: 0 0 25px rgba(243, 156, 18, 0.3); }
+        .hero h2 { font-size: 55px; font-weight: 800; margin-bottom: 10px; }
+        .hero p { font-size: 19px; max-width: 650px; margin-bottom: 30px; color: #ccc; }
+        .hero .btn-container { display: flex; gap: 15px; }
+        .hero .btn { padding: 15px 35px; background-color: #f39c12; color: #000; text-decoration: none; font-weight: 800; border-radius: 8px; transition: 0.3s; font-size: 16px; }
+        .hero .btn:hover { background-color: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .hero .btn-secondary { background-color: transparent; border: 2px solid #f39c12; color: #f39c12; }
+        .hero .btn-secondary:hover { background-color: #f39c12; color: #000; }
+
+        /* Stats Section */
+        .stats { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; padding: 50px 20px; background-color: #151518; border-top: 1px solid #333; border-bottom: 1px solid #333; }
+        .stat-item { text-align: center; }
+        .stat-item h3 { font-size: 40px; font-weight: 800; color: #f39c12; }
+        .stat-item p { font-size: 16px; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+
+        section { padding: 90px 20px; text-align: center; max-width: 1200px; margin: auto; }
+        .section-title { font-size: 38px; font-weight: 800; margin-bottom: 50px; text-transform: uppercase; }
+
+        /* Services Grid */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .service-card { background: #1a1a1d; padding: 40px 25px; border-radius: 12px; border-bottom: 4px solid #333; transition: 0.4s; }
+        .service-card:hover { transform: translateY(-10px); border-bottom-color: #f39c12; background: #222226; }
+        .service-card .icon { font-size: 45px; margin-bottom: 20px; }
+        .service-card h3 { font-size: 22px; margin-bottom: 15px; }
+        .service-card p { color: #bbb; font-size: 15px; }
+
+        /* Portfolio Grid */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .portfolio-grid img { width: 100%; height: auto; border-radius: 10px; transition: 0.3s; border: 2px solid transparent; }
+        .portfolio-grid img:hover { transform: scale(1.03); border-color: #f39c12; box-shadow: 0 10px 20px rgba(0,0,0,0.5); z-index: 10; position: relative; }
+
+        /* Testimonials / Client Reviews */
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testimonial-card { background: #1a1a1d; padding: 30px; border-radius: 10px; text-align: left; position: relative; }
+        .testimonial-card::before { content: "“"; font-size: 60px; color: #f39c12; position: absolute; top: -10px; left: 20px; opacity: 0.3; }
+        .testimonial-card p { color: #ccc; font-style: italic; margin-bottom: 20px; z-index: 2; position: relative; }
+        .testimonial-card h4 { font-size: 18px; color: #fff; }
+        .testimonial-card span { font-size: 14px; color: #f39c12; }
+
+        /* Contact Section */
+        .contact-box { background: linear-gradient(135deg, #1a1a1d, #0f0f11); padding: 50px; border-radius: 15px; border: 1px solid #333; }
+        .contact-box h3 { font-size: 28px; margin-bottom: 15px; }
+        .contact-box a { color: #000; background: #f39c12; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 800; display: inline-block; margin-top: 20px; transition: 0.3s; }
+        .contact-box a:hover { background: #fff; }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.4); z-index: 100; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #1ebe57; }
+
+        footer { padding: 30px; text-align: center; background: #000; color: #555; }
+
+        @media(max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; }
+            .hero h2 { font-size: 35px; }
+            .stats { gap: 20px; }
+            .stat-item h3 { font-size: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1><span class="highlight">Adarsh</span> Mishra</h1>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#portfolio">Work</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <img src="image_8.png" alt="Adarsh Mishra" class="profile-photo">
+        <h2>From 0 to <span class="highlight">Monetization</span></h2>
+        <p>I am Adarsh Mishra. With 2+ years of professional tech & editing experience, I help creators automate their workflow, boost CTR, and dominate YouTube.</p>
+        <div class="btn-container">
+            <a href="#portfolio" class="btn">See My Work</a>
+            <a href="https://wa.me/918726072050" target="_blank" class="btn btn-secondary">Chat on WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stat-item">
+            <h3>2+</h3>
+            <p>Years Experience</p>
+        </div>
+        <div class="stat-item">
+            <h3>50+</h3>
+            <p>Thumbnails Designed</p>
+        </div>
+        <div class="stat-item">
+            <h3>100%</h3>
+            <p>Client Satisfaction</p>
+        </div>
+    </div>
+
+    <section id="services">
+        <h2 class="section-title">My <span class="highlight">Expertise</span></h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">🎯</div>
+                <h3>High-CTR Thumbnails</h3>
+                <p>Custom, psychology-driven designs that force the viewer to click instantly.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">✂️</div>
+                <h3>Video & Voice Editing</h3>
+                <p>Crisp audio, retention-focused cuts, and engaging B-rolls that keep the audience hooked.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🤖</div>
+                <h3>AI Automation</h3>
+                <p>Smart workflows for rapid content creation, scriptwriting, and editing pipelines.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2 class="section-title">My <span class="highlight">Portfolio</span></h2>
+        <div class="portfolio-grid">
+            <img src="Screenshot_20260408_215106_Gallery.jpg" alt="Work 1">
+            <img src="Screenshot_20260408_215115_Gallery.jpg" alt="Work 2">
+            <img src="Screenshot_20260408_215119_Gallery.jpg" alt="Work 3">
+            <img src="Screenshot_20260408_215124_Gallery.jpg" alt="Work 4">
+            <img src="2.jpg" alt="Work 5">
+            <img src="6.jpg" alt="Work 6">
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2 class="section-title">Client <span class="highlight">Feedback</span></h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"Adarsh completely transformed my channel's visual style. The thumbnails are top-notch and my CTR went from 3% to 8% in just a week!"</p>
+                <h4>Education Channel</h4>
+                <span>YouTube Creator</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"His editing speed and understanding of retention is amazing. Plus, the AI automation strategies saved me hours of manual work."</p>
+                <h4>Tech Vlogger</h4>
+                <span>Client</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-box">
+            <h3>Ready to Scale Your Channel?</h3>
+            <p>Stop struggling with low views. Let's build a strategy that works.</p>
+            <p style="margin: 15px 0;">Email: <strong>adarshmishra2873@gmail.com</strong></p>
+            <a href="https://wa.me/918726072050" target="_blank">Message Me Now</a>
+        </div>
+    </section>
+
+    <a href="https://wa.me/918726072050" class="whatsapp-float" target="_blank" title="Chat with me">
+        💬
+    </a>
+
+    <footer>
+        <p>&copy; 2026 Adarsh Mishra. Crafted for Creators.</p>
+    </footer>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>
