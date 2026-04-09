@@ -7,56 +7,43 @@ public_folder: "images"
 
 collections:
   - name: "portfolio_settings"
-    label: "My Portfolio"
+    label: "Agency Manager"
     files:
-      - label: "Auto Gallery"
+      - label: "1. Basic & SEO Settings"
+        name: "settings"
+        file: "settings.json"
+        fields:
+          - {label: "Site Name", name: "site_name", widget: "string", default: "Adarsh Mishra Official"}
+          - {label: "SEO Description", name: "seo_desc", widget: "string", default: "High-CTR Thumbnails & YouTube Growth Agency"}
+          - {label: "Social Share Photo (URL)", name: "share_img", widget: "image"}
+          - {label: "Calendly Link (Step 5)", name: "calendly_link", widget: "string", default: "https://calendly.com/your-username"}
+
+      - label: "2. Auto Gallery"
         name: "gallery"
         file: "projects.json"
         fields:
-          - label: "Upload Content"
-            name: "items"
-            widget: "list"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Select Photo/Video", name: "image", widget: "image", required: false}
-              - {label: "YouTube Video Link", name: "yt_link", widget: "string", required: false}
-              - {label: "Short Description", name: "desc", widget: "text"}
+          - {label: "Items", name: "items", widget: "list", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Image", name: "image", widget: "image", required: false}, {label: "YT Link", name: "yt_link", widget: "string", required: false}, {label: "Desc", name: "desc", widget: "text"}]}
               
-      - label: "Secret Tools (Earnings)"
+      - label: "3. Affiliate Hub (Tools)"
         name: "tools"
         file: "tools.json"
         fields:
-          - label: "Add Your Affiliate Tools"
-            name: "items"
-            widget: "list"
-            fields:
-              - {label: "Tool Title", name: "title", widget: "string"}
-              - {label: "Description", name: "desc", widget: "text"}
-              - {label: "Your Affiliate Link", name: "link", widget: "string"}
-              - {label: "Button Text", name: "btn_text", widget: "string", default: "Get It Here"}
+          - {label: "Tools", name: "items", widget: "list", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Desc", name: "desc", widget: "text"}, {label: "Link", name: "link", widget: "string"}, {label: "Btn", name: "btn_text", widget: "string", default: "Get Access"}]}
 
-      - label: "Before & After (CTR Boost)"
+      - label: "4. Before & After"
         name: "before_after"
         file: "before_after.json"
         fields:
-          - label: "Add Transformations"
-            name: "items"
-            widget: "list"
-            fields:
-              - {label: "Project Title", name: "title", widget: "string"}
-              - {label: "Before Image (Old Thumbnail)", name: "before_img", widget: "image"}
-              - {label: "After Image (Your New Thumbnail)", name: "after_img", widget: "image"}
-              - {label: "Result/Description", name: "desc", widget: "text"}
+          - {label: "Items", name: "items", widget: "list", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Before", name: "before_img", widget: "image"}, {label: "After", name: "after_img", widget: "image"}, {label: "Desc", name: "desc", widget: "text"}]}
 
-      - label: "Deep Dive Case Studies"
+      - label: "5. Case Studies"
         name: "case_studies"
         file: "case_studies.json"
         fields:
-          - label: "Add Case Studies"
-            name: "items"
-            widget: "list"
-            fields:
-              - {label: "Headline (e.g. 500K Views in 30 Days!)", name: "headline", widget: "string"}
-              - {label: "Channel Type (e.g. Tech, Finance, Vlogs)", name: "niche", widget: "string"}
-              - {label: "Analytics Screenshot (Upload Graph)", name: "graph_img", widget: "image"}
-              - {label: "What Strategy Did You Use?", name: "strategy", widget: "text"}
+          - {label: "Items", name: "items", widget: "list", fields: [{label: "Headline", name: "headline", widget: "string"}, {label: "Niche", name: "niche", widget: "string"}, {label: "Graph", name: "graph_img", widget: "image"}, {label: "Strategy", name: "strategy", widget: "text"}]}
+
+      - label: "6. SEO Blog Articles"
+        name: "blog"
+        file: "blog.json"
+        fields:
+          - {label: "Blog Posts", name: "items", widget: "list", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Main Image", name: "image", widget: "image"}, {label: "Content", name: "content", widget: "markdown"}, {label: "Affiliate Link", name: "aff_link", widget: "string", required: false}]}
