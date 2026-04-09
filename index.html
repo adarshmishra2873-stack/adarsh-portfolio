@@ -221,6 +221,29 @@
     ▶️ Subscribe For Secrets
   </a>
 </section>
+    <section id="secret-tools" style="padding: 60px 20px; background: #111114; text-align: center; border-bottom: 1px solid #222;">
+  <h2 style="color: #f39c12; font-size: 32px; margin-bottom: 10px; font-weight: 800;">🛠️ My Secret Creators' Arsenal</h2>
+  <p style="color: #ccc; margin-bottom: 40px; font-size: 16px;">The exact tools & softwares I use to generate millions of views and high CTR.</p>
+  <div id="auto-tools-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 1100px; margin: 0 auto;"></div>
+</section>
+
+<script>
+  fetch('tools.json')
+    .then(res => res.json())
+    .then(data => {
+      if (data.items) {
+        let html = '';
+        data.items.forEach(t => {
+          html += `<div style="flex: 1 1 300px; background: #1a1a1c; padding: 30px 20px; border-radius: 15px; border: 1px solid #333; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <h3 style="color: #fff; font-size: 24px; margin-bottom: 15px;">${t.title}</h3>
+            <p style="color: #aaa; font-size: 14px; margin-bottom: 25px; line-height: 1.5;">${t.desc}</p>
+            <a href="${t.link}" target="_blank" style="display: inline-block; background: #f39c12; color: #000; padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s;">${t.btn_text}</a>
+          </div>`;
+        });
+        document.getElementById('auto-tools-container').innerHTML = html;
+      }
+    }).catch(err => console.log('Waiting for tools...'));
+</script>
     <div id="auto-portfolio" style="display:flex; flex-wrap:wrap; gap:15px; justify-content:center; padding:20px; background:#0f0f11;"></div>
     <script>
   fetch('projects.json')
