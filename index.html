@@ -254,6 +254,43 @@
       }
     }).catch(err => console.log('Waiting for tools...'));
 </script>
+    <section style="padding: 60px 20px; background: #0a0a0c; text-align: center; border-bottom: 2px solid #222;">
+  <h2 style="color: #fff; font-size: 32px; margin-bottom: 10px; font-weight: 800;">🔥 Before & After Transformations</h2>
+  <p style="color: #aaa; margin-bottom: 40px; font-size: 16px;">How my 3D designs force viewers to click instantly.</p>
+  
+  <div id="auto-ba-container" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 1100px; margin: 0 auto;"></div>
+</section>
+
+<script>
+  fetch('before_after.json')
+    .then(res => res.json())
+    .then(data => {
+      if (data.items) {
+        let html = '';
+        data.items.forEach(item => {
+          html += `<div style="background: #1a1a1c; padding: 20px; border-radius: 15px; border: 1px solid #333; box-shadow: 0 5px 20px rgba(0,0,0,0.6); width: 100%; max-width: 500px;">
+            <h3 style="color: #f39c12; font-size: 22px; margin-bottom: 15px;">${item.title}</h3>
+            
+            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+              <div style="flex: 1; position: relative;">
+                <span style="position: absolute; top: 5px; left: 5px; background: rgba(255,0,0,0.9); color: white; padding: 3px 8px; font-size: 12px; border-radius: 5px; font-weight: bold;">BEFORE (Low CTR)</span>
+                <img src="${item.before_img}" style="width: 100%; border-radius: 10px; border: 2px solid #555; filter: grayscale(30%);">
+              </div>
+              
+              <div style="flex: 1; position: relative;">
+                <span style="position: absolute; top: 5px; left: 5px; background: rgba(0,255,0,0.9); color: white; padding: 3px 8px; font-size: 12px; border-radius: 5px; font-weight: bold;">AFTER (High CTR)</span>
+                <img src="${item.after_img}" style="width: 100%; border-radius: 10px; border: 2px solid #f39c12;">
+              </div>
+            </div>
+            
+            <p style="color: #ccc; font-size: 15px; line-height: 1.5; background: #222; padding: 10px; border-radius: 8px;">${item.desc}</p>
+          </div>`;
+        });
+        document.getElementById('auto-ba-container').innerHTML = html;
+      }
+    }).catch(err => console.log('Waiting for B&A content...'));
+</script>
+
     <div id="auto-portfolio" style="display:flex; flex-wrap:wrap; gap:15px; justify-content:center; padding:20px; background:#0f0f11;"></div>
     <script>
   fetch('projects.json')
