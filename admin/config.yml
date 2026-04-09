@@ -30,7 +30,20 @@ collections:
             name: "items"
             widget: "list"
             fields:
-              - {label: "Tool Title (e.g. ✂️ Video Editing)", name: "title", widget: "string"}
-              - {label: "Description (Why use it?)", name: "desc", widget: "text"}
+              - {label: "Tool Title", name: "title", widget: "string"}
+              - {label: "Description", name: "desc", widget: "text"}
               - {label: "Your Affiliate Link", name: "link", widget: "string"}
-              - {label: "Button Text (e.g. Try For Free)", name: "btn_text", widget: "string", default: "Get It Here"}
+              - {label: "Button Text", name: "btn_text", widget: "string", default: "Get It Here"}
+
+      - label: "Before & After (CTR Boost)"
+        name: "before_after"
+        file: "before_after.json"
+        fields:
+          - label: "Add Transformations"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Project Title (e.g. Tech Channel Boost)", name: "title", widget: "string"}
+              - {label: "Before Image (Old Thumbnail)", name: "before_img", widget: "image"}
+              - {label: "After Image (Your New Thumbnail)", name: "after_img", widget: "image"}
+              - {label: "Result/Description (e.g. CTR increased from 2% to 10%)", name: "desc", widget: "text"}
