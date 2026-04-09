@@ -43,7 +43,20 @@ collections:
             name: "items"
             widget: "list"
             fields:
-              - {label: "Project Title (e.g. Tech Channel Boost)", name: "title", widget: "string"}
+              - {label: "Project Title", name: "title", widget: "string"}
               - {label: "Before Image (Old Thumbnail)", name: "before_img", widget: "image"}
               - {label: "After Image (Your New Thumbnail)", name: "after_img", widget: "image"}
-              - {label: "Result/Description (e.g. CTR increased from 2% to 10%)", name: "desc", widget: "text"}
+              - {label: "Result/Description", name: "desc", widget: "text"}
+
+      - label: "Deep Dive Case Studies"
+        name: "case_studies"
+        file: "case_studies.json"
+        fields:
+          - label: "Add Case Studies"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Headline (e.g. 500K Views in 30 Days!)", name: "headline", widget: "string"}
+              - {label: "Channel Type (e.g. Tech, Finance, Vlogs)", name: "niche", widget: "string"}
+              - {label: "Analytics Screenshot (Upload Graph)", name: "graph_img", widget: "image"}
+              - {label: "What Strategy Did You Use?", name: "strategy", widget: "text"}
