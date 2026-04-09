@@ -18,6 +18,19 @@ collections:
             widget: "list"
             fields:
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "Select Photo/Video File (Optional)", name: "image", widget: "image", required: false}
-              - {label: "YouTube Video Link (Optional)", name: "yt_link", widget: "string", required: false}
+              - {label: "Select Photo/Video", name: "image", widget: "image", required: false}
+              - {label: "YouTube Video Link", name: "yt_link", widget: "string", required: false}
               - {label: "Short Description", name: "desc", widget: "text"}
+              
+      - label: "Secret Tools (Earnings)"
+        name: "tools"
+        file: "tools.json"
+        fields:
+          - label: "Add Your Affiliate Tools"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Tool Title (e.g. ✂️ Video Editing)", name: "title", widget: "string"}
+              - {label: "Description (Why use it?)", name: "desc", widget: "text"}
+              - {label: "Your Affiliate Link", name: "link", widget: "string"}
+              - {label: "Button Text (e.g. Try For Free)", name: "btn_text", widget: "string", default: "Get It Here"}
